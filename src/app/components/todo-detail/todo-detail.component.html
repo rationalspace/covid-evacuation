@@ -1,0 +1,79 @@
+    <div class="col-sm-12 pt-5">
+        <div class="col-md-12">
+            <form id="todoForm" #todoForm="ngForm" (ngSubmit)="onTodoSubmitForm(todoForm);" novalidat>
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">{{mode}} Member</legend>    
+                    <div class="form-group row">
+                        <label for="memberName" class="col-md-2 col-form-label">Name</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" #memberName="ngModel" name="memberName" [(ngModel)]="todoDetail.memberName" placeholder="First Name" required>
+                            <div [hidden]="memberName.valid || (memberName.pristine && !todoForm.submitted)" class="text-danger">
+                              First name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="presentCity" class="col-md-2 col-form-label">Present City</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" #presentCity="ngModel" name="presentCity" [(ngModel)]="todoDetail.presentCity" placeholder="Present City" required>
+                            <div [hidden]="presentCity.valid || (presentCity.pristine && !todoForm.submitted)" class="text-danger">
+                              Present City is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="presentCountry" class="col-md-2 col-form-label">Present Country</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" #presentCountry="ngModel" name="presentCountry" [(ngModel)]="todoDetail.presentCountry" placeholder="Present Country" required>
+                            <div [hidden]="presentCountry.valid || (presentCountry.pristine && !todoForm.submitted)" class="text-danger">
+                              Present Country is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="destinationCity" class="col-md-2 col-form-label">Destination City</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" #destinationCity="ngModel" name="destinationCity" [(ngModel)]="todoDetail.destinationCity" placeholder="Destination City" required>
+                            <div [hidden]="destinationCity.valid || (destinationCity.pristine && !todoForm.submitted)" class="text-danger">
+                              Destination City is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="destinationCountry" class="col-md-2 col-form-label">Destination Country</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" #destinationCountry="ngModel" name="destinationCountry" [(ngModel)]="todoDetail.destinationCountry" placeholder="Destination Country" required>
+                            <div [hidden]="destinationCountry.valid || (destinationCountry.pristine && !todoForm.submitted)" class="text-danger">
+                              Destination Country is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-2 col-form-label">Email</label>
+                        <div class="col-md-5">
+                            <input type="email" class="form-control" #email="ngModel" name="email" [(ngModel)]="todoDetail.email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                            <div *ngIf="email.invalid && (email.dirty || email.touched || todoForm.submitted)" class="text-danger">
+                                <div *ngIf="email.errors.required"> Email is required. </div>
+                                <div *ngIf="email.errors.pattern"> The email address you have entered is invalid. please try again.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone" class="col-md-2 col-form-label">Phone</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" #phone="ngModel" name="phone" [(ngModel)]="todoDetail.phone" placeholder="Phone" required>
+                            <div [hidden]="phone.valid || (phone.pristine && !todoForm.submitted)" class="text-danger">
+                              Phone is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-7 text-right">
+                            <button type="submit" class="btn btn-primary mr-2">Save</button>
+                            <button type="button" (click)="onClickCancel()" class="btn btn-primary">Cancel</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
