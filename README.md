@@ -1,9 +1,9 @@
-# Angular Todo Application
+# Angular Covid Evacuation Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
-## Blog
-Please check more detail on our blog <a target="_blank" href="http://www.teclogiq.com/blog/angular-todo-application/">angular-todo-application</a>
+This app helps to create a list of people who want to go back to their homes and are stuck in other countries.
+You can add members to this list which gets stored in local storage.
 
 ## NodeJS dependancy
 Install NodeJS dependancy using `npm install`
